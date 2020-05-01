@@ -31,7 +31,7 @@ const paths = {
   input: 'src/',
   output: 'dist/',
   assets: 'src/assets',
-  website: 'https://www.INSERT_YOUR_WEBSITE_ADDRESS_HERE.com.br',
+  website: 'https://www.alignement.com.au',
   styles: {
     input: 'src/styles',
     output: 'dist/css/',
@@ -58,8 +58,8 @@ const scss = () => {
 
 // Watch JS files -> sourcemap, minifiy with uglify, concat
 const js = () => {
-  return src('src/js/**/*.js', { sourcemaps: isDev })
-    .pipe(uglify())
+  return src('src/js/scripts.js', { sourcemaps: isDev })
+    // .pipe(uglify())
     .pipe(concat('scripts.js'))
     .pipe(
       rename(function (path) {
@@ -74,7 +74,14 @@ const js = () => {
 
 // Concat Minified JS libraries
 const jsLibs = () => {
-  const libPaths = []
+  const libPaths = [
+    "src/js/libs/jquery-3.2.1.min.js",
+    "src/js/libs/popper.min.js",
+    "src/js/libs/bootstrap.min.js",
+    "src/js/libs/owl.carousel.min.js",
+    "src/js/libs/jquery.waypoints.min.js",
+    "src/js/libs/main.js"
+  ]
 
   return src(libPaths)
     .pipe(concat('libs.js'))
@@ -184,7 +191,7 @@ exports.default = series(
     minifyHtml,
     scss,
     js,
-    // jsLibs,
+    jsLibs,
     generateSitemap,
     optimizeGif,
     optimizePng,

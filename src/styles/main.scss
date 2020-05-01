@@ -1,7 +1,10 @@
-// Import Normalize and Skeleton
-@import 'node_modules/normalize.css/normalize.css';
-@import 'skeleton/skeleton.scss';
+// Import Normalize
+// @import 'node_modules/normalize.css/normalize.css';
 
 // Import your custom styles
-@import 'variables';
-@import 'base';
+// @import 'css/bootstrap-grid';
+// @import 'css/bootstrap-reboot';
+@import 'css/bootstrap';
+@import 'css/animate';
+@import 'css/owl.carousel.min';
+@import 'scss/style';
