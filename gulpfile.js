@@ -75,11 +75,15 @@ const js = () => {
 // Concat Minified JS libraries
 const jsLibs = () => {
   const libPaths = [
-    "src/js/libs/jquery-3.2.1.min.js",
-    "src/js/libs/popper.min.js",
-    "src/js/libs/bootstrap.min.js",
-    "src/js/libs/owl.carousel.min.js",
-    "src/js/libs/jquery.waypoints.min.js",
+    // "src/js/libs/jquery-3.2.1.min.js",
+    // "src/js/libs/popper.min.js",
+    // "src/js/libs/bootstrap.min.js",
+    // "src/js/libs/owl.carousel.min.js",
+    // "src/js/libs/jquery.waypoints.min.js",
+    'node_modules/jquery/dist/jquery.slim.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+    "node_modules/owl.carousel/dist/owl.carousel.min.js",
+    "node_modules/waypoints/lib/jquery.waypoints.min.js",
     "src/js/libs/main.js"
   ]
 
