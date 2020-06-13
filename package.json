@@ -35,6 +35,7 @@
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "owl.carousel": "^2.3.4",
+    "tiny-slider": "^2.9.2",
     "waypoints": "^4.0.1"
   },
   "devDependencies": {
@@ -58,7 +59,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "imagemin-guetzli": "^3.0.0",
-    "imagemin-pngquant": "^8.0.0",
+    "imagemin-pngquant": "^9.0.0",
     "prettier": "^2.0.5",
     "standard-version": "^8.0.0"
   },

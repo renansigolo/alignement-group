@@ -58,7 +58,7 @@ const scss = () => {
 
 // Watch JS files -> sourcemap, minifiy with uglify, concat
 const js = () => {
-  return src('src/js/scripts.js', { sourcemaps: isDev })
+  return src('src/js/main.js', { sourcemaps: isDev })
     // .pipe(uglify())
     .pipe(concat('scripts.js'))
     .pipe(
@@ -75,16 +75,11 @@ const js = () => {
 // Concat Minified JS libraries
 const jsLibs = () => {
   const libPaths = [
-    // "src/js/libs/jquery-3.2.1.min.js",
-    // "src/js/libs/popper.min.js",
-    // "src/js/libs/bootstrap.min.js",
-    // "src/js/libs/owl.carousel.min.js",
-    // "src/js/libs/jquery.waypoints.min.js",
     'node_modules/jquery/dist/jquery.slim.min.js',
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     "node_modules/owl.carousel/dist/owl.carousel.min.js",
-    "node_modules/waypoints/lib/jquery.waypoints.min.js",
-    "src/js/libs/main.js"
+    // "node_modules/tiny-slider/dist/min/tiny-slider.js",
+    "node_modules/waypoints/lib/jquery.waypoints.min.js"
   ]
 
   return src(libPaths)
@@ -160,7 +155,8 @@ const optimizeJpg = () => {
 // Copy remaining files to dist
 const copy = () => {
   return src([
-    'src/**/*.{xml,txt,eot,ttf,woff,woff2,otf,ttf,php,css,js,json,map}',
+    // 'src/**/*.{xml,txt,eot,ttf,woff,woff2,otf,ttf,php,css,js,json,map}',
+    'src/**/*.{xml,txt,eot,ttf,woff,woff2,otf,ttf,php,css,js,json,map,jpg,jpeg,png}',
     '!src/js/**/*',
     `!${paths.styles.input}/**/*`,
   ]).pipe(dest(paths.output))
@@ -194,12 +190,12 @@ exports.default = series(
   parallel(
     minifyHtml,
     scss,
-    js,
     jsLibs,
+    js,
     generateSitemap,
     optimizeGif,
-    optimizePng,
-    optimizeJpg
+    // optimizePng,
+    // optimizeJpg
   ),
   copy
 )

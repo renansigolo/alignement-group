@@ -64,9 +64,10 @@
 
   // owl carousel
   var majorCarousel = $('.js-carousel-1')
+
   majorCarousel.owlCarousel({
     loop: true,
-    autoplay: true,
+    autoplay: false,
     stagePadding: 7,
     margin: 20,
     animateOut: 'fadeOut',
