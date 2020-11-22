@@ -1,4 +1,4 @@
-# 📦 Gulp Boilerplate
+# Alignement Group Website
 
 Minimal Gulp 4 boilerplate with Babel, Sass, ESLint, Live Reload, and development/production optimization.
 
